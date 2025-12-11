@@ -24,7 +24,7 @@ if __name__== "__main__":
     q = int(sys.argv[4])
     m = int(sys.argv[5])
 
-    output_dir = "boards"
+    output_dir = "../boards"
     os.makedirs(output_dir, exist_ok=True)
 
     for i in range(numOfFiles):
