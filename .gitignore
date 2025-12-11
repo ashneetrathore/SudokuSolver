@@ -1,0 +1,6 @@
+# Ignore Python bytecode cache files
+__pycache__/
+
+# Ignore all board files
+boards/
+
