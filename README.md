@@ -20,7 +20,7 @@ SudokuSolver/
 │   │── domain.py
 │   │── variable.py
 │   │── trail.py
-│   │── board_generator.py
+│   └── board_generator.py
 │── README.md                 # Project documentation
 └── .gitignore                # Excludes files and folders from version control
 ```
