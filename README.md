@@ -10,16 +10,17 @@ Based on assignment instructions from Prof. Kalev Kask
 
 ### :open_file_folder: PROJECT FILE STRUCTURE
 ```bash
-CarrollSolver/
-│── main.py
-│── sudoku_board.py              
-│── bt_solver.py                 
-│── constraint_network.py                
-│── constraint.py           
-│── domain.py
-│── variable.py
-│── trail.py
-│── board_generator.py
+SudokuSolver/
+│── src/
+│   │── main.py
+│   │── sudoku_board.py              
+│   │── bt_solver.py                 
+│   │── constraint_network.py                
+│   │── constraint.py           
+│   │── domain.py
+│   │── variable.py
+│   │── trail.py
+│   │── board_generator.py
 │── README.md                 # Project documentation
 └── .gitignore                # Excludes files and folders from version control
 ```
