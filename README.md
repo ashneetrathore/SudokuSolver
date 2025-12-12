@@ -128,15 +128,15 @@ Here are example commands with some common heuristic combinations for various le
 | Good    | `python3 main.py MRV LCV FC`      |
 | Best    | `python3 main.py MAD LCV NOR`     |
 
+> [!WARNING]
+> Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution
+
 ## :printer: UNDERSTANDING THE OUTPUT
 After solving, the program prints information about the algorithm's performance. The following are some definitions to better interpret these analytics:
 - **Trail pushes** are recorded whenever the solver makes a new assignment, meaning it tentatively assigns a value to a selected variable
 - **Backtracks** occur when the solver discovers that its current state violates a constraint and as a result, it undoes previous assignments to restore consistency
     
     - Fewer backtracks generally indicate that applied heuristics are successfully reducing the search space
-
-> [!WARNING]
-> Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution
 
 > [!NOTE]
 > When the solver runs on a single board (Options 1 and 2 in [Input File Options](#anchor-point)), the solution is printed directly to the terminal. When the solver runs on multiple boards in a directory (Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
