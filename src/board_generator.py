@@ -15,7 +15,7 @@ def genBoard ( p, q, m, filename ):
 
 if __name__== "__main__":
     if len(sys.argv) != 6:
-        print ( "Usage: Board_Generator Base_File_Name #ofBoards p q m" )
+        print ( "Usage: python3 board_generator.py <base_file_name> <#ofBoards. <p> <q> <m>" )
         exit(0)
 
     baseFileName = sys.argv[1]
@@ -28,5 +28,5 @@ if __name__== "__main__":
     os.makedirs(output_dir, exist_ok=True)
 
     for i in range(numOfFiles):
-        print ( "Creating world number: " + str(i) + "." )
+        print ( "Creating board file: " + str(i) + "." )
         genBoard( p, q, m, baseFileName + "_" + str(i) + ".txt" )
