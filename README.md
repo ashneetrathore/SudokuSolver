@@ -143,4 +143,4 @@ After solving, the program prints information about the algorithm's performance.
     - Fewer backtracks generally indicate that applied heuristics are successfully reducing the search space
 
 > [!NOTE]
-> When the solver runs on a single board file (Options 1 and 2 in [Input File Options](#anchor-point)), the solution is printed directly to the terminal. When the solver runs on multiple boards runs on a directory containing one or more board files(Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
+> When the solver runs on a single board file (Options 1 and 2 in [Input File Options](#anchor-point)), the solution is printed directly to the terminal. When the solver runs on multiple boards runs on a directory containing one or more board files (Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
