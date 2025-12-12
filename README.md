@@ -1,13 +1,13 @@
-## :1234: SUDOKU SOLVER
+# :1234: SUDOKU SOLVER
 
-### :open_book: OVERVIEW
+## :open_book: OVERVIEW
 Date: March 2024\
 Developer(s): Ashneet Rathore\
 Based on assignment instructions from Prof. Kalev Kask
 
 Sudoku Solver is a program that uses AI-based constraint satisfaction techniques, such as heuristics and backtracking search, to efficiently solve Sudoku boards. Users can supply their own board or generate one, select different solving heuristics, and receive the completed board along with statistics tracking the algorithm's solving performance.
 
-### :gear: HOW IT WORKS
+## :gear: HOW IT WORKS
 Written in **Python**, the program models a Sudoku board as a **Constraint Satisfaction Problem (CSP)**. A CSP is a type of problem where variables must be assigned values from specificied domains such that all constraints, or rules, are satisfied. In Sudoku, each cell is represented as a variable, and its domain consists of all digits still allowed based on the current state of its row, column, or subgrid. The constraints are simply the rules of Sudoku - each digit can appear exactly once per row, column, and subgrid. As the solver progresses and neighboring assignments are made, the domain for each cell is continually reduced, thus shrinking the search space and moving the solver to a consistent, or legal, completed state.
 
 The solver uses **backtracking search** to incrementally assign values to variables, checking for consistency at each step and undoing assignments if constraint violations occur. This approach effectively performs a depth-first exploration of the search space while avoiding invalid paths. To improve efficiency, combinations of different **heuristics** can be applied (if specified by the user) to reduce the search space, prioritize assignments that are less likely to cause constraint violations, and eliminate invalid solutions earlier. The following details the types of heuristics applied:
@@ -25,7 +25,7 @@ The solver uses **backtracking search** to incrementally assign values to variab
 
 By combining CSP modeling, backtracking, and heuristics, the program efficiently prunes the search space to find a valid Sudoku board.
 
-### :open_file_folder: PROJECT FILE STRUCTURE
+## :open_file_folder: PROJECT FILE STRUCTURE
 ```bash
 SudokuSolver/
 │── src/
@@ -41,7 +41,7 @@ SudokuSolver/
 │── README.md                   # Project documentation
 └── .gitignore                  # Excludes files and folders from version control
 ```
-### :rocket: SET UP & EXECUTION
+## :rocket: SET UP & EXECUTION
 **1. Clone the repository**
 ```bash
 git clone https://github.com/ashneetrathore/SudokuSolver.git
@@ -55,8 +55,9 @@ cd SudokuSolver/src
 python3 main.py
 ```
 
-### :wrench: TRY IT OUT
-:hammer: **Generating Boards**
+## :wrench: TRY IT OUT
+
+### :hammer: **Generating Boards**
 > [!IMPORTANT]
 > All boards will be generated to the `boards/` directory inside the project root.
 
@@ -83,7 +84,7 @@ Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid di
 | 16×16      | 4×4       | 25             |
 | 25×25      | 5×5       | 50             |
 
-:card_index_dividers: **Input File Options**
+### :card_index_dividers: **Input File Options**
 
 The `main.py` program accepts different types of input for the board(s):
 
@@ -105,12 +106,9 @@ python3 main.py ../boards/puzzle_1.txt
 python3 main.py ../boards/
 ```
 
-:running_woman: **Applying Heuristics**
+### :running_woman: **Applying Heuristics**
 
-The solver allows users to apply heuristics to improve efficiency. Heuristics are divided into three categories, and for each category, users can select one heuristic or simply omit it from the command to apply no heuristic from that category
-
-> [!WARNING]
-> Multiple heuristics can be combined **across categories**, but **only one heuristic can be specified per category**.
+The solver allows users to apply heuristics to improve efficiency. Heuristics are divided into three categories, and users can select **one heuristic per category** or simply omit it from the command to apply no heuristic from it
 
 | Category             | Description                                                 | Options  |
 |----------------------|-------------------------------------------------------------|----------|
@@ -118,7 +116,7 @@ The solver allows users to apply heuristics to improve efficiency. Heuristics ar
 | Value selection      | Decide which value, for a selected variable, to assign next | LCV      |
 | Consistency checking | Check that an assignment does not violate constraints       | FC, NOR  |
 
-Here are example commands with some common heuristic combinations for various levels of efficiency (the board is generated with default options). 
+Here are example commands with some common heuristic combinations for various levels of efficiency (the board is generated with default options)
 
 | Level   | Commands with Applied Heuristics  |
 |---------|-----------------------------------|
