@@ -50,7 +50,7 @@ cd SudokuSolver/src
 
 **2. Run the program**
 > [!IMPORTANT]
-> This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options, see the usage guide in the next section.
+> This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options, see the next section.
 ```bash
 python3 main.py
 ```
@@ -89,22 +89,21 @@ The `main.py` program accepts different types of input for the board(s):
 
 **1. No filename specified**\
     The solver will run on a randomly generated board using the default options (`p=3`,`q=3`, `m=7`)
+```bash
+python3 main.py
+```
 
-    ```bash
-    python3 main.py
-    ```
 **2. Single filename specified**\
     The solver will run on a single board provided at the given relative path. The example below is for a `txt` file located in the `boards/` directory at the project root
+```bash
+python3 main.py ../boards/puzzle_1.txt
+```
 
-    ```bash
-    python3 main.py ../boards/puzzle_1.txt
-    ```
 **3. Directory specified**\
     The solver will run on all `txt` files in the given directory. The example below is for all boards inside the `boards/` directory at the project root
-
-    ```bash
-    python3 main.py ../boards/
-    ```
+```bash
+python3 main.py ../boards/
+```
 
 :running_woman: **Applying Heuristics**
 
@@ -119,14 +118,14 @@ The solver allows users to apply heuristics to improve efficiency. Heuristics ar
 | Value selection      | Decide which value, for a selected variable, to assign next | LCV      |
 | Consistency checking | Check that an assignment does not violate constraints       | FC, NOR  |
 
-Here are some common heuristic combinations for various levels of efficiency, and their corresponding example commands that run the solver on a generated board with default options. 
+Here are example commands with some common heuristic combinations for various levels of efficiency (the board is generated with default options). 
 
-| Level   | Applied Heuristics        | Example Command               |
-|---------|---------------------------|-------------------------------|
-| Okay    | None (pure backtracking)  | `python3 main.py`             |
-| Medium  | MRV + FC                  | `python3 main.py MRV FC`      |
-| Good    | MRV + LCV + FC            | `python3 main.py MRV LCV FC`  |
-| Best    | MAD + LCV + NOR           | `python3 main.py MAD LCV NOR` |
+| Level   | Commands with Applied Heuristics  |
+|---------|-----------------------------------|
+| Okay    | `python3 main.py`                 |
+| Medium  | `python3 main.py MRV FC`          |
+| Good    | `python3 main.py MRV LCV FC`      |
+| Best    | `python3 main.py MAD LCV NOR`     |
 
 > [!WARNING]
 > If few or no heuristics are applied to a large board (16x16 or 25x25), the solver may fail to find a solution.
