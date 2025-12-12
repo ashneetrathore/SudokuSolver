@@ -5,7 +5,7 @@ Date: March 2024\
 Developer(s): Ashneet Rathore\
 Based on assignment instructions from Prof. Kalev Kask
 
-Sudoku Solver is a program that solves Sudoku boards using AI-based constraint satisfaction techniques, such as heuristics and backtracking search, to efficiently explore the solution space and compute valid solutions for any given board. Users can supply their own Sudoku board or generate one, select different solving heuristics, and receive the completed board along with statistics tracking the algorithm's solving performance.
+Sudoku Solver is a program that uses AI-based constraint satisfaction techniques, such as heuristics and backtracking search, to efficiently solve Sudoku boards. Users can supply their own Sudoku board or generate one, select different solving heuristics, and receive the completed board along with statistics tracking the algorithm's solving performance.
 
 ### :gear: HOW IT WORKS
 
