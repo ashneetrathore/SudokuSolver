@@ -69,8 +69,7 @@ class SudokuBoard:
     # ==================================================================
 
     def __str__ ( self ):
-        output = "p:" + str(self.p) + "\tq:" \
-                                            + str(self.q) + "\n"
+        output = str(self.p) + " " + str(self.q) + "\n"
         for i in range(self.N):
             for j in range(self.N):
                 try:

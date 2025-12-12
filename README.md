@@ -7,6 +7,9 @@ Based on assignment instructions from Prof. Kalev Kask
 
 Sudoku Solver is a program that uses AI-based constraint satisfaction techniques, such as heuristics and backtracking search, to efficiently solve Sudoku boards. Users can supply their own board or generate one, select different solving heuristics, and receive the completed board along with statistics tracking the algorithm's solving performance.
 
+## :film_strip: DEMO
+![Demo](demo.gif)
+
 ## :gear: HOW IT WORKS
 Written in **Python**, the program models a Sudoku board as a **Constraint Satisfaction Problem (CSP)**. A CSP is a type of problem where variables must be assigned values from specificied domains such that all constraints, or rules, are satisfied. In Sudoku, each cell is represented as a variable, and its domain consists of all digits still allowed based on the current state of its row, column, or subgrid. The constraints are simply the rules of Sudoku - each digit can appear exactly once per row, column, and subgrid. As the solver progresses and neighboring assignments are made, the domain for each cell is continually reduced, thus shrinking the search space and moving the solver to a consistent, or legal, completed state.
 
@@ -41,7 +44,8 @@ SudokuSolver/
 │   │── trail.py                # Defines Trail class (tracks assignment for backtracking)
 │   └── board_generator.py      # Generates random board(s)
 │── README.md                   # Project documentation
-└── .gitignore                  # Excludes files and folders from version control
+│── .gitignore                  # Excludes files and folders from version control
+└── demo.gif                    # GIF showing the sudoku solving demo
 ```
 ## :rocket: SET UP & EXECUTION
 **1. Clone the repository**
@@ -60,12 +64,9 @@ python3 main.py
 ## :wrench: TRY IT OUT
 
 ### :hammer: **Board Generation Options**
-> [!IMPORTANT]
-> All boards will be generated to the `boards/` directory inside the project root.
-
 To generate unsolved boards with custom options, run `board_generator.py` with the following command format
 ```bash
-python3 board_generatory.py <base_file_name> <num_boards> <p> <q> <m>
+python3 board_generator.py <base_file_name> <num_boards> <p> <q> <m>
 ```
 `base_file_name` is the base name for the generated `txt` files containing the boards. Each file will be saved with this base name followed by an underscore and a number.\
 `num_boards` is the number of boards to generate.\
@@ -75,7 +76,7 @@ python3 board_generatory.py <base_file_name> <num_boards> <p> <q> <m>
 
 The following command generates 4 boards with 3x3 subgrids, each containing 7 pre-filled cells. The generated files will be named sequentially as `puzzle_0.txt`, `puzzle_1.txt`, `puzzle.txt`, and `puzzle_3.txt`
 ```bash
-python3 board_generatory.py puzzle 4 3 3 7
+python3 board_generator.py puzzle 4 3 3 7
 ```
 
 Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid dimensions, and the recommended number of pre-filled cells `m`. A traditional Sudoku board has 9x9 dimensions.
@@ -85,6 +86,9 @@ Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid di
 | 12×12      | 3×4       | 15             |
 | 16×16      | 4×4       | 25             |
 | 25×25      | 5×5       | 50             |
+
+> [!IMPORTANT]
+> All boards will be generated to the `boards/` directory inside the project root.
 
 <a name="anchor-point"></a>
 ### :card_index_dividers: **Input File Options**
@@ -139,4 +143,4 @@ After solving, the program prints information about the algorithm's performance.
     - Fewer backtracks generally indicate that applied heuristics are successfully reducing the search space
 
 > [!NOTE]
-> When the solver runs on a single board (Options 1 and 2 in [Input File Options](#anchor-point)), the solution is printed directly to the terminal. When the solver runs on multiple boards in a directory (Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
+> When the solver runs on a single board file (Options 1 and 2 in [Input File Options](#anchor-point)), the solution is printed directly to the terminal. When the solver runs on multiple boards runs on a directory containing one or more board files(Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
