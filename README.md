@@ -86,6 +86,7 @@ Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid di
 | 16×16      | 4×4       | 25             |
 | 25×25      | 5×5       | 50             |
 
+<a name="anchor-point"></a>
 ### :card_index_dividers: **Input File Options**
 
 The `main.py` program accepts different types of input for the board(s):
@@ -138,4 +139,4 @@ After solving, the program prints information about the algorithm's performance.
 > Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution
 
 > [!NOTE]
-> When the solver runs on a single board (Options 1 and 2 in [Input File Options](#input-file-options)), the solution is printed directly to the terminal. When the solver runs on multiple boards in a directory (Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
+> When the solver runs on a single board (Options 1 and 2 in [Input File Options](#anchor-point)), the solution is printed directly to the terminal. When the solver runs on multiple boards in a directory (Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
