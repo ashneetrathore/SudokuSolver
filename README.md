@@ -10,7 +10,9 @@ Sudoku Solver is a program that uses AI-based constraint satisfaction techniques
 ## :gear: HOW IT WORKS
 Written in **Python**, the program models a Sudoku board as a **Constraint Satisfaction Problem (CSP)**. A CSP is a type of problem where variables must be assigned values from specificied domains such that all constraints, or rules, are satisfied. In Sudoku, each cell is represented as a variable, and its domain consists of all digits still allowed based on the current state of its row, column, or subgrid. The constraints are simply the rules of Sudoku - each digit can appear exactly once per row, column, and subgrid. As the solver progresses and neighboring assignments are made, the domain for each cell is continually reduced, thus shrinking the search space and moving the solver to a consistent, or legal, completed state.
 
-The solver uses **backtracking search** to incrementally assign values to variables, checking for consistency at each step and undoing assignments if constraint violations occur. This approach effectively performs a depth-first exploration of the search space while avoiding invalid paths. To improve efficiency, combinations of different **heuristics** can be applied (if specified by the user) to reduce the search space, prioritize assignments that are less likely to cause constraint violations, and eliminate invalid solutions earlier. The following details the types of heuristics applied:
+The solver uses **backtracking search**, a variation of depth-first search, to incrementally assign values to variables while checking for consistency at each step. If a constraint violation occurs, the search retreats and explores alternative assignments. To implement the backtracking mechanism, the solver maintains a trail, or a **stack data structure**, that records every reversible change (assignments and domain prunings). When backtracking is required, the solver pops these records, restoring the search to the most recent consistent state. 
+
+To improve efficiency, combinations of different **heuristics** can be applied (if specified by the user) to reduce the search space, prioritize assignments that are less likely to cause constraint violations, and eliminate invalid solutions earlier. The following details the types of heuristics applied:
 
 1. Variable selection heuristics determine which unassigned variable to assign next
     - **Minimum Remaining Value (MRV)** selects the unassigned variable with the smallest domain (with the fewest legal values)
@@ -57,7 +59,7 @@ python3 main.py
 
 ## :wrench: TRY IT OUT
 
-### :hammer: **Generating Boards**
+### :hammer: **Board Generation Options**
 > [!IMPORTANT]
 > All boards will be generated to the `boards/` directory inside the project root.
 
@@ -106,7 +108,7 @@ python3 main.py ../boards/puzzle_1.txt
 python3 main.py ../boards/
 ```
 
-### :running_woman: **Applying Heuristics**
+### :running_woman: **Heuristic Options**
 
 The solver allows users to apply heuristics to improve efficiency. Heuristics are divided into three categories, and users can select **one heuristic per category** or simply omit it from the command to apply no heuristic from it
 
@@ -125,5 +127,14 @@ Here are example commands with some common heuristic combinations for various le
 | Good    | `python3 main.py MRV LCV FC`      |
 | Best    | `python3 main.py MAD LCV NOR`     |
 
+## :printer: UNDERSTANDING THE OUTPUT
+After solving, the program prints information about the algorithm's performance. The following are some definitions to better interpret these analytics:
+- **Trail pushes** are recorded whenever the solver makes a new assignment, meaning it tentatively assigns a value to a selected variable
+- **Backtracks** occur when the solver discovers that its current state violates a constraint and as a result, it undoes previous assignments to restore consistency
+    - Fewer backtracks generally indicate that applied heuristics are successfully reducing the search space
+
 > [!WARNING]
-> If few or no heuristics are applied to a large board (16x16 or 25x25), the solver may fail to find a solution.
+> Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution
+
+> [!NOTE]
+> When the solver runs on a single board (Options 1 and 2 in [Input File Options](#input-file-options)), the solution is printed directly to the terminal. When the solver runs on multiple boards in a directory (Option 3), each solved board is saved inside its respective `txt` file rather than being printed to the terminal. Additionally, for Option 3, the solver reports how many boards were successfully solved.
