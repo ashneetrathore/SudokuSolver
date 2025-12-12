@@ -14,17 +14,17 @@ Sudoku Solver is a program that uses AI-based constraint satisfaction techniques
 ```bash
 SudokuSolver/
 │── src/
-│   │── main.py
-│   │── sudoku_board.py              
-│   │── bt_solver.py                 
-│   │── constraint_network.py                
-│   │── constraint.py           
-│   │── domain.py
-│   │── variable.py
-│   │── trail.py
-│   └── board_generator.py
-│── README.md                 # Project documentation
-└── .gitignore                # Excludes files and folders from version control
+│   │── main.py                 # Takes user input and runs solver
+│   │── sudoku_board.py         # Defines SudokuBoard class (represents board)
+│   │── bt_solver.py            # Defines BTSolver class (applies heuristics and solves board)
+│   │── constraint_network.py   # Defines ConstraintNetwork class (CSP representation of the problem)           
+│   │── constraint.py           # Defines Constraint class (represents CSP constraint btwn variables)
+│   │── domain.py               # Defines Domain class (represents domain of a variable)
+│   │── variable.py             # Defines Variable class (represents variable in CSP)
+│   │── trail.py                # Defines Trail class (tracks assignment for backtracking)
+│   └── board_generator.py      # Generates random board(s)
+│── README.md                   # Project documentation
+└── .gitignore                  # Excludes files and folders from version control
 ```
 ### :rocket: SET UP & EXECUTION
 **1. Clone the repository**
