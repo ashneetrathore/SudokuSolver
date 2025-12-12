@@ -115,7 +115,7 @@ python3 main.py ../boards/
 
 ### :running_woman: **Heuristic Options**
 
-The solver allows users to apply heuristics to improve efficiency. Heuristics are divided into three categories, and users can select **one heuristic per category** or simply omit it from the command to apply no heuristic from it
+The solver allows users to apply heuristics to improve efficiency. Heuristics are divided into three categories, and users can select **one heuristic per category** or simply omit it from the command to apply no heuristic from it. Heuristics can be entered in any order on the command line.
 
 | Category             | Description                                                 | Options  |
 |----------------------|-------------------------------------------------------------|----------|
