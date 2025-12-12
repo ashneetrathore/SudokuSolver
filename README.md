@@ -131,6 +131,7 @@ Here are example commands with some common heuristic combinations for various le
 After solving, the program prints information about the algorithm's performance. The following are some definitions to better interpret these analytics:
 - **Trail pushes** are recorded whenever the solver makes a new assignment, meaning it tentatively assigns a value to a selected variable
 - **Backtracks** occur when the solver discovers that its current state violates a constraint and as a result, it undoes previous assignments to restore consistency
+    
     - Fewer backtracks generally indicate that applied heuristics are successfully reducing the search space
 
 > [!WARNING]
