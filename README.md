@@ -17,15 +17,15 @@ The solver uses **backtracking search**, a variation of depth-first search, to i
 
 To improve efficiency, combinations of different **heuristics** can be applied (if specified by the user) to reduce the search space, prioritize assignments that are less likely to cause constraint violations, and eliminate invalid solutions earlier. The following details the types of heuristics applied:
 
-1. Variable selection heuristics determine which unassigned variable to assign next
-    - **Minimum Remaining Value (MRV)** selects the unassigned variable with the smallest domain (with the fewest legal values)
-    - **Minimum Remaining Value with Maximum Degree (MAD)** extends the MRV heuristic by applying a tie-breaking rule that selects the most constrained variable (with the most unassigned neighbors) when multiple variables share the smallest domain
+1. Variable selection heuristics determine which unassigned variable to assign next.
+    - **Minimum Remaining Value (MRV)** selects the unassigned variable with the smallest domain (with the fewest legal values).
+    - **Minimum Remaining Value with Maximum Degree (MAD)** extends the MRV heuristic by applying a tie-breaking rule that selects the most constrained variable (with the most unassigned neighbors) when multiple variables share the smallest domain.
 
-2. Value selection heuristics determine which value, for a selected variable, to assign next
-    - **Least Constraining Value (LCV)** chooses the value that restricts the fewest options for neighboring variables
+2. Value selection heuristics determine which value, for a selected variable, to assign next.
+    - **Least Constraining Value (LCV)** chooses the value that restricts the fewest options for neighboring variables.
 
-3. Consistency checking heuristics check that an assignment does not violate any constraints
-    - **Forward Checking (FC)** eliminates illegal values from neighbors after each assignment
+3. Consistency checking heuristics check that an assignment does not violate any constraints.
+    - **Forward Checking (FC)** eliminates illegal values from neighbors after each assignment.
     - **Norvig Checking (NOR)** extends the FC heuristic by additionally assigning values that have only one possible position within a constraint.
 
 By combining CSP modeling, backtracking, and heuristics, the program efficiently prunes the search space to find a valid Sudoku board.
@@ -48,15 +48,15 @@ SudokuSolver/
 └── demo.gif                    # GIF showing the sudoku solving demo
 ```
 ## :rocket: SET UP & EXECUTION
-1. Clone the repository**
+1. Clone the repository
     ```bash
     git clone https://github.com/ashneetrathore/SudokuSolver.git
     cd SudokuSolver/src
     ```
 
-2. Run the program**
+2. Run the program
     > [!IMPORTANT]
-    > This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options, see the next section.
+    > This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options, see the next section.`
     ```bash
     python3 main.py
     ```
@@ -74,7 +74,7 @@ python3 board_generator.py <base_file_name> <num_boards> <p> <q> <m>
 `q` is the number of columns in a subgrid.\
 `m` is the number of pre-filled cells in the board.
 
-Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid dimensions, and the recommended number of pre-filled cells `m`
+Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid dimensions, and the recommended number of pre-filled cells `m`:
 | Board Size | `p`×`q`   | Recommended `m`|
 |------------|-----------|----------------|
 | 9×9        | 3×3       | 7              |
@@ -93,7 +93,7 @@ python3 board_generator.py puzzle 4 3 3 7
 <a name="anchor-point"></a>
 ### :card_index_dividers: **Input File Options**
 
-The `main.py` program accepts three different forms of input for the board(s)
+The `main.py` program accepts three different forms of input for the board(s):
 
 **1. No filename specified**
 
@@ -104,14 +104,14 @@ python3 main.py
 
 **2. Single filename specified**
 
-The solver will run on a single board provided at the given relative path. The example below is for a `txt` file located in the `boards/` directory at the project root
+The solver will run on a single board provided at the given relative path. The example below is for a `txt` file located in the `boards/` directory at the project root.
 ```bash
 python3 main.py ../boards/puzzle_1.txt
 ```
 
 **3. Directory specified**
 
-The solver will run on all `txt` files in the given directory. The example below is for all boards inside the `boards/` directory at the project root
+The solver will run on all `txt` files in the given directory. The example below is for all boards inside the `boards/` directory at the project root.
 ```bash
 python3 main.py ../boards/
 ```
@@ -126,7 +126,7 @@ The solver allows users to apply heuristics to improve efficiency. Heuristics ar
 | Value selection      | Decide which value, for a selected variable, to assign next | LCV      |
 | Consistency checking | Check that an assignment does not violate constraints       | FC, NOR  |
 
-Here are example commands with some common heuristic combinations for various levels of efficiency (the board is generated with default options)
+Here are example commands with some common heuristic combinations for various levels of efficiency (the board is generated with default options):
 
 | Level   | Commands with Applied Heuristics  |
 |---------|-----------------------------------|
@@ -139,7 +139,7 @@ Here are example commands with some common heuristic combinations for various le
 > Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution
 
 ## :printer: UNDERSTANDING THE OUTPUT
-After solving, the program prints information about the algorithm's performance. Here are some definitions to better interpret these analytics
+After solving, the program prints information about the algorithm's performance. Here are some definitions to better interpret these analytics:
 - **Trail pushes** are recorded whenever the solver makes a new assignment, meaning it tentatively assigns a value to a selected variable
 
 - **Backtracks** occur when the solver discovers that its current state violates a constraint and as a result, it undoes previous assignments to restore consistency
