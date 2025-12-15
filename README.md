@@ -51,13 +51,13 @@ SudokuSolver/
 **1. Clone the repository**
 ```bash
 git clone https://github.com/ashneetrathore/SudokuSolver.git
-cd SudokuSolver/src
 ```
 
 **2. Run the program**
 > [!IMPORTANT]
 > This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options,   see the next section.
 ```bash
+cd SudokuSolver/src
 python3 main.py
 ```
 
