@@ -48,19 +48,19 @@ SudokuSolver/
 └── demo.gif                    # GIF showing the sudoku solving demo
 ```
 ## :rocket: SET UP & EXECUTION
-1. Clone the repository
-    ```bash
-    git clone https://github.com/ashneetrathore/SudokuSolver.git
-    cd SudokuSolver/src
-    ```
+Clone the repository
+```bash
+git clone https://github.com/ashneetrathore/SudokuSolver.git
+cd SudokuSolver/src
+```
 
-2. Run the program
-    ```bash
-    python3 main.py
-    ```
-    
-    > [!IMPORTANT]
-    > This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options,   see the next section.
+Run the program
+> [!IMPORTANT]
+> This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options,   see the next section.
+```bash
+python3 main.py
+```
+
 
 ## :wrench: TRY IT OUT
 
