@@ -58,6 +58,7 @@ SudokuSolver/
     ```bash
     python3 main.py
     ```
+    
     > [!IMPORTANT]
     > This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options,   see the next section.
 
