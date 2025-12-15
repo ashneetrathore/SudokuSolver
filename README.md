@@ -137,7 +137,7 @@ Here are example commands with some common heuristic combinations for various le
 | Best    | `python3 main.py MAD LCV NOR`     |
 
 > [!WARNING]
-> Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution
+> Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution.
 
 ## :printer: UNDERSTANDING THE OUTPUT
 After solving, the program prints information about the algorithm's performance. Here are some definitions to better interpret these analytics:
