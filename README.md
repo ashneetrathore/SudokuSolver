@@ -48,13 +48,13 @@ SudokuSolver/
 └── demo.gif                    # GIF showing the sudoku solving demo
 ```
 ## :rocket: SET UP & EXECUTION
-Clone the repository
+**1. Clone the repository**
 ```bash
 git clone https://github.com/ashneetrathore/SudokuSolver.git
 cd SudokuSolver/src
 ```
 
-Run the program
+**2. Run the program**
 > [!IMPORTANT]
 > This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options,   see the next section.
 ```bash
