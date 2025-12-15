@@ -48,18 +48,18 @@ SudokuSolver/
 └── demo.gif                    # GIF showing the sudoku solving demo
 ```
 ## :rocket: SET UP & EXECUTION
-**1. Clone the repository**
-```bash
-git clone https://github.com/ashneetrathore/SudokuSolver.git
-cd SudokuSolver/src
-```
+1. Clone the repository**
+    ```bash
+    git clone https://github.com/ashneetrathore/SudokuSolver.git
+    cd SudokuSolver/src
+    ```
 
-**2. Run the program**
-> [!IMPORTANT]
-> This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options, see the next section.
-```bash
-python3 main.py
-```
+2. Run the program**
+    > [!IMPORTANT]
+    > This runs the solver using default options without any heuristics applied. For details specifying heuristics and other options, see the next section.
+    ```bash
+    python3 main.py
+    ```
 
 ## :wrench: TRY IT OUT
 
@@ -74,12 +74,7 @@ python3 board_generator.py <base_file_name> <num_boards> <p> <q> <m>
 `q` is the number of columns in a subgrid.\
 `m` is the number of pre-filled cells in the board.
 
-The following command generates 4 boards with 3x3 subgrids, each containing 7 pre-filled cells. The generated files will be named sequentially as `puzzle_0.txt`, `puzzle_1.txt`, `puzzle.txt`, and `puzzle_3.txt`
-```bash
-python3 board_generator.py puzzle 4 3 3 7
-```
-
-Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid dimensions, and the recommended number of pre-filled cells `m`. A traditional Sudoku board has 9x9 dimensions.
+Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid dimensions, and the recommended number of pre-filled cells `m`
 | Board Size | `p`×`q`   | Recommended `m`|
 |------------|-----------|----------------|
 | 9×9        | 3×3       | 7              |
@@ -87,28 +82,36 @@ Here are some typical Sudoku board sizes, their corresponding `p`x`q` subgrid di
 | 16×16      | 4×4       | 25             |
 | 25×25      | 5×5       | 50             |
 
+The following command generates 4 boards with 3x3 subgrids, each containing 7 pre-filled cells. The generated files will be named sequentially as `puzzle_0.txt`, `puzzle_1.txt`, `puzzle.txt`, and `puzzle_3.txt`.
+```bash
+python3 board_generator.py puzzle 4 3 3 7
+```
+
 > [!IMPORTANT]
 > All boards will be generated to the `boards/` directory inside the project root.
 
 <a name="anchor-point"></a>
 ### :card_index_dividers: **Input File Options**
 
-The `main.py` program accepts different types of input for the board(s):
+The `main.py` program accepts three different forms of input for the board(s)
 
-**1. No filename specified**\
-    The solver will run on a randomly generated board using the default options (`p=3`,`q=3`, `m=7`)
+**1. No filename specified**
+
+The solver will run on a randomly generated board using the default options (`p=3`,`q=3`, `m=7`)
 ```bash
 python3 main.py
 ```
 
-**2. Single filename specified**\
-    The solver will run on a single board provided at the given relative path. The example below is for a `txt` file located in the `boards/` directory at the project root
+**2. Single filename specified**
+
+The solver will run on a single board provided at the given relative path. The example below is for a `txt` file located in the `boards/` directory at the project root
 ```bash
 python3 main.py ../boards/puzzle_1.txt
 ```
 
-**3. Directory specified**\
-    The solver will run on all `txt` files in the given directory. The example below is for all boards inside the `boards/` directory at the project root
+**3. Directory specified**
+
+The solver will run on all `txt` files in the given directory. The example below is for all boards inside the `boards/` directory at the project root
 ```bash
 python3 main.py ../boards/
 ```
@@ -136,8 +139,9 @@ Here are example commands with some common heuristic combinations for various le
 > Applying few or no heuristics to a large board (16x16 or 25x25) may cause the solver to fail to find a solution
 
 ## :printer: UNDERSTANDING THE OUTPUT
-After solving, the program prints information about the algorithm's performance. The following are some definitions to better interpret these analytics:
+After solving, the program prints information about the algorithm's performance. Here are some definitions to better interpret these analytics
 - **Trail pushes** are recorded whenever the solver makes a new assignment, meaning it tentatively assigns a value to a selected variable
+
 - **Backtracks** occur when the solver discovers that its current state violates a constraint and as a result, it undoes previous assignments to restore consistency
     
     - Fewer backtracks generally indicate that applied heuristics are successfully reducing the search space
